@@ -11,3 +11,12 @@ test("To have a header with the name of 'Pop Movies'", async ({ page }) => {
   await expect(header).toBeVisible();
   await expect(header).toContainText("Pop Movies");
 });
+test("To have movies diplayed", async ({ page }) => {
+  await page.goto("http://localhost:5173/");
+
+  // select all movies
+  const movies = await page.getByTestId("movie").all();
+
+  // check if there are movies
+  await expect(movies.length).not.toBe(0);
+});
