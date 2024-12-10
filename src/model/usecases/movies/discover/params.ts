@@ -15,6 +15,15 @@ export enum DiscoverMoviesParamsSortBy {
   vote_count_desc = "vote_count.desc",
 }
 
+/**
+ * @typedef DiscoverMoviesUseCaseParams
+ * @property {DiscoverMoviesParamsSortBy} sort_by defaults to DiscoverMoviesParamsSortBy.popularity_desc
+ * @property {boolean} include_adult defaults to false
+ * @property {boolean} include_video defaults to false
+ */
 export type DiscoverMoviesUseCaseParams = {
   sort_by: DiscoverMoviesParamsSortBy;
+  include_adult: boolean;
+  include_video: boolean;
+  language: string;
 };
