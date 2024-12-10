@@ -1,6 +1,6 @@
 import { Movie } from "@/model";
 
-export interface DiscoverMoviesUseCaseResult {
+export interface DiscoverMoviesUsecaseResult {
   page: number;
   results: Movie[];
 }

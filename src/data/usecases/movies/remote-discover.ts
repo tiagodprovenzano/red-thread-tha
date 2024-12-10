@@ -2,17 +2,17 @@ import { HttpClient, HttpMethod } from "@/infra/http/types";
 import {
   DiscoverMoviesUseCase,
   DiscoverMoviesUseCaseParams,
-  DiscoverMoviesUseCaseResult,
+  DiscoverMoviesUsecaseResult,
 } from "@/model";
 
-export class RemoteDiscoverUseCase implements DiscoverMoviesUseCase {
+export class RemoteDiscoverMoviesUsecase implements DiscoverMoviesUseCase {
   constructor(
-    private readonly httpClient: HttpClient<DiscoverMoviesUseCaseResult>
+    private readonly httpClient: HttpClient<DiscoverMoviesUsecaseResult>
   ) {}
 
   async execute(
     params: DiscoverMoviesUseCaseParams
-  ): Promise<DiscoverMoviesUseCaseResult> {
+  ): Promise<DiscoverMoviesUsecaseResult> {
     const response = await this.httpClient.request({
       url: "discover/movie",
       method: HttpMethod.get,

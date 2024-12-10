@@ -1,8 +1,8 @@
-import { DiscoverMoviesUseCaseParams } from "./params";
-import { DiscoverMoviesUseCaseResult } from "./result";
+import { DiscoverMoviesUsecaseParams } from "./params";
+import { DiscoverMoviesUsecaseResult } from "./result";
 
-export interface DiscoverMoviesUseCase {
+export interface DiscoverMoviesUsecase {
   execute: (
-    params: DiscoverMoviesUseCaseParams
-  ) => Promise<DiscoverMoviesUseCaseResult>;
+    params: DiscoverMoviesUsecaseParams
+  ) => Promise<DiscoverMoviesUsecaseResult>;
 }
