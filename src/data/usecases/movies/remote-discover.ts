@@ -1,17 +1,17 @@
 import { HttpClient, HttpMethod } from "@/infra/http/types";
 import {
-  DiscoverMoviesUseCase,
-  DiscoverMoviesUseCaseParams,
+  DiscoverMoviesUsecase,
+  DiscoverMoviesUsecaseParams,
   DiscoverMoviesUsecaseResult,
 } from "@/model";
 
-export class RemoteDiscoverMoviesUsecase implements DiscoverMoviesUseCase {
+export class RemoteDiscoverMoviesUsecase implements DiscoverMoviesUsecase {
   constructor(
     private readonly httpClient: HttpClient<DiscoverMoviesUsecaseResult>
   ) {}
 
   async execute(
-    params: DiscoverMoviesUseCaseParams
+    params: DiscoverMoviesUsecaseParams
   ): Promise<DiscoverMoviesUsecaseResult> {
     const response = await this.httpClient.request({
       url: "discover/movie",
@@ -19,7 +19,7 @@ export class RemoteDiscoverMoviesUsecase implements DiscoverMoviesUseCase {
       filters: [
         ...Object.keys(params).map((key) => ({
           field: key,
-          value: `${params[key as keyof DiscoverMoviesUseCaseParams]}`,
+          value: `${params[key as keyof DiscoverMoviesUsecaseParams]}`,
         })),
       ],
     });

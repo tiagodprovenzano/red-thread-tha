@@ -1,4 +1,4 @@
 export * from "./result";
-export type { DiscoverMoviesUsecaseParams as DiscoverMoviesUseCaseParams } from "./params";
+export type { DiscoverMoviesUsecaseParams } from "./params";
 export { DiscoverMoviesParamsSortBy } from "./params";
-export type { DiscoverMoviesUsecase as DiscoverMoviesUseCase } from "./usecase";
+export type { DiscoverMoviesUsecase } from "./usecase";

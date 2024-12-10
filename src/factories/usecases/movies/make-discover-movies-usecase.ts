@@ -1,8 +1,8 @@
 import { RemoteDiscoverMoviesUsecase } from "@/data";
 import { makeHttpClient } from "@/infra/http/make-http-client";
-import { DiscoverMoviesUseCase } from "@/model";
+import { DiscoverMoviesUsecase } from "@/model";
 
-export const makeDiscoverMoviesUsecase = (): DiscoverMoviesUseCase => {
+export const makeDiscoverMoviesUsecase = (): DiscoverMoviesUsecase => {
   const api = makeHttpClient();
   return new RemoteDiscoverMoviesUsecase(api);
 };
