@@ -1,8 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router";
-import { HomeScreenFactory } from "@/factories/screens";
+import { HomeScreenFactory, MovieScrenFactory } from "@/factories/screens";
 import { Layout } from "./layout";
-import { MovieScreen } from "./screens/movie";
 
 function App() {
   return (
@@ -10,7 +9,7 @@ function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<HomeScreenFactory />} />
-          <Route path="/movies/:id" element={<MovieScreen />} />
+          <Route path="/movies/:id" element={<MovieScrenFactory />} />
         </Route>
       </Routes>
     </BrowserRouter>
