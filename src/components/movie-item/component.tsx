@@ -7,12 +7,12 @@ interface Props {
 }
 
 export const MovieComponent = ({ movie }: Props) => {
-  const { posterPath, handleMovieClick } = useMovieItem(movie);
+  const { posterPath, handleMovieItemClick } = useMovieItem(movie);
   return (
     <div
       data-testid={"movie"}
       className="movie-item-container"
-      onClick={handleMovieClick}
+      onClick={handleMovieItemClick}
     >
       <img src={posterPath} alt={movie.title} />
     </div>

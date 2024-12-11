@@ -1,0 +1,33 @@
+.movie-title {
+    width: 100%;
+    max-height: 56px;
+    padding: 16px;
+    background-color: #746A64;
+}
+
+.movie-title h1 {
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin: 0;
+}
+
+.movie-details-container {
+    background-color: white;
+    height: 100%;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.movie-info-row {
+    display: flex;
+}
+.movie-details-container img {
+    width: 115px;
+    height: auto;
+}

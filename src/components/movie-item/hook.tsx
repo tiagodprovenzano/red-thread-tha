@@ -7,11 +7,11 @@ const useMovieItem = (movie: ListMovie) => {
   const posterPath = usePosterPath(movie.poster_path);
 
   const navigate = useNavigate();
-  const handleMovieClick = useCallback(() => {
+  const handleMovieItemClick = useCallback(() => {
     navigate("/movies/" + movie.id);
   }, [movie.id, navigate]);
 
-  return { posterPath, handleMovieClick };
+  return { posterPath, handleMovieItemClick };
 };
 
 export default useMovieItem;

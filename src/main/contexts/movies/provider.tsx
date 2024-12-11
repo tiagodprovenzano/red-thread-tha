@@ -37,6 +37,7 @@ export const MoviesContextProvider: React.FC<PropsWithChildren> = ({
 
   const fetchSingleMovie = useCallback(async () => {
     if (isLoading.current || !singleMovieId) return;
+    setSingleMovie(undefined);
     new MoviesRepository()
       .getSingle({ movie_id: Number(singleMovieId) })
       .then((data) => {

@@ -1,4 +1,5 @@
 import { MoviesContext } from "@/main/contexts/movies/context";
+import { usePosterPath } from "@/main/hooks";
 import { MovieScreen } from "@/screens/movie";
 import { useContext, useEffect } from "react";
 
@@ -7,5 +8,8 @@ export const MovieScrenFactory = () => {
   useEffect(() => {
     fetchSingleMovie();
   }, [fetchSingleMovie]);
-  return <MovieScreen movieDetails={singleMovieDetails} />;
+  const posterPath = usePosterPath(singleMovieDetails?.poster_path || "");
+  return (
+    <MovieScreen movieDetails={singleMovieDetails} posterPath={posterPath} />
+  );
 };
