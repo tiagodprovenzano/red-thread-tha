@@ -1,3 +1,15 @@
+## Screenshots
+
+Here are some screenshots of the application:
+
+### Home Page
+
+![Home Page](./screenshots/home.png)
+
+### Movie Details
+
+![Movie Details](./screenshots/single-movie.png)
+
 # Installation Instructions
 
 Follow these steps to set up the project and add your API key.
