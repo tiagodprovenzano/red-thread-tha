@@ -1,7 +1,5 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
@@ -39,4 +37,15 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 0;
+  height: 100vh;
+  width: 100vw;
+  /* we are only focusing on the design for phones and tablets */
+  max-width: 768px;
 }
