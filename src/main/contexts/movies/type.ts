@@ -1,4 +1,9 @@
-import { DiscoverMoviesUsecaseParams, ListMovie, MovieDetails } from "@/model";
+import {
+  DiscoverMoviesUsecaseParams,
+  ListMovie,
+  MovieDetails,
+  MovieVideo,
+} from "@/model";
 
 export interface MoviesContextType {
   movies: ListMovie[];
@@ -8,4 +13,6 @@ export interface MoviesContextType {
   updateDiscoverMoviesOptions: (options: DiscoverMoviesUsecaseParams) => void;
   fetchMovies: () => void;
   fetchSingleMovie: () => void;
+  fetchMovieVideos: () => void;
+  trailers: MovieVideo[];
 }

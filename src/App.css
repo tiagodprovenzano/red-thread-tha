@@ -22,3 +22,19 @@
   padding-top: 64px;
 
 }
+
+.bold {
+  font-weight: 700;
+}
+
+.regular500 {
+  font-weight: 500;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.italic {
+  font-style: italic;
+}

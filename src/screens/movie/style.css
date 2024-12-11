@@ -29,6 +29,30 @@
     flex-direction: column;
     margin-top: 58px;
     overflow-y: scroll;
+    gap: 24px;
+}
+
+.movie-details-container h1 {
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #212121;
+    margin: 0;
+}
+
+.movie-details-container h2 {
+    font-family: Roboto;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #212121;
+    margin: 0;
 }
 
 .movie-info-row {
@@ -41,43 +65,6 @@
         justify-content: space-between;
         padding: 0;
         width: 100%;
-    }
-
-    .movie-info h1 {
-        font-family: Roboto;
-        font-size: 20px;
-        font-weight: 400;
-        line-height: 24px;
-        text-align: left;
-        text-underline-position: from-font;
-        text-decoration-skip-ink: none;
-        color: #212121;
-        margin: 0;
-    }
-
-    .movie-info h2 {
-        font-family: Roboto;
-        font-size: 14px;
-        font-style: italic;
-        font-weight: 400;
-        line-height: 24px;
-        text-align: left;
-        text-underline-position: from-font;
-        text-decoration-skip-ink: none;
-        color: #212121;
-        margin: 0;
-    }
-
-    .movie-info h3 {
-        font-family: Roboto;
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 24px;
-        text-align: left;
-        text-underline-position: from-font;
-        text-decoration-skip-ink: none;
-        color: #212121;
-        margin: 0;
     }
 
     .movie-info button {
@@ -100,4 +87,48 @@
 .movie-info-row img {
     width: 30.6vw;
     height: auto;
+}
+
+.movie-overview p{
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color:#757575;
+    margin: 0;
+}
+
+.movie-trailers {
+    display: flex;
+    flex-direction: column;
+}
+
+.movie-trailers header{
+    width: 100%;
+    border-bottom: 1px solid #DEDEDE;
+    padding-bottom: 3px;
+    margin-bottom: 16px;
+}
+
+.trailers-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.trailer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px;
+    gap: 16px;
+    background-color: #FAFAFA;
+    max-height: 60px;
+}
+
+.trailer h2{
+    color: #757575;
 }
