@@ -15,7 +15,7 @@ export const MoviesContextProvider: React.FC<PropsWithChildren> = ({
 
   const [discoverMoviesOptions, setDiscoverMoviesOptions] =
     useState<DiscoverMoviesUsecaseParams>({
-      sort_by: DiscoverMoviesUsecaseParamsSortBy.primary_release_date_desc,
+      sort_by: DiscoverMoviesUsecaseParamsSortBy.popularity_desc,
       include_adult: false,
       include_video: false,
       language: "en-US",
