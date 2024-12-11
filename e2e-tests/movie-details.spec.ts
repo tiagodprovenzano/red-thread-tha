@@ -39,12 +39,14 @@ test("when on a movie page, should display movie runtime", async ({ page }) => {
   await page.goto("http://localhost:5173/movies/912649");
   const runtime = await page.getByTestId("movie-runtinme");
   await expect(runtime).toBeVisible();
+  await expect(runtime).toContainText("109 mins");
 });
 
 test("when on a movie page, should display movie score", async ({ page }) => {
   await page.goto("http://localhost:5173/movies/912649");
   const score = await page.getByTestId("movie-score");
   await expect(score).toBeVisible();
+  await expect(score).toContainText("/10");
 });
 
 test("when on a movie page, should display an add to favorite button", async ({
@@ -74,4 +76,24 @@ test("when on a movie page, should display movie trailers", async ({
   await page.goto("http://localhost:5173/movies/912649");
   const trailers = await page.getByTestId("movie-trailers");
   await expect(trailers).toBeVisible();
+});
+
+test("when clicking on a trailer should either go to youtube or google", async ({
+  page,
+}) => {
+  await page.goto("http://localhost:5173/movies/912649");
+  await page.waitForSelector(".trailer", { state: "attached" });
+  const trailers: Locator[] = await page.getByTestId("trailer-item").all();
+  await expect(trailers.length).not.toBe(0);
+  const trailer: Locator = trailers[0];
+  await expect(trailer).not.toBeNull();
+  await (trailer as Locator).click();
+  const [newPage] = await Promise.all([
+    page.waitForEvent("popup"),
+    trailer.click(),
+  ]);
+
+  await newPage.waitForLoadState();
+  const url = newPage.url();
+  await expect(url).toMatch(/(youtube\.com|google\.com)/);
 });

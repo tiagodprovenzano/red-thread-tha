@@ -12,7 +12,11 @@ export const TrailerItem = ({
 }) => {
   const { handleClickTrailer } = useTrailerItem(trailer);
   return (
-    <div className="trailer" onClick={handleClickTrailer}>
+    <div
+      data-testid={"trailer-item"}
+      className="trailer"
+      onClick={handleClickTrailer}
+    >
       <PlayCircle />
       <h2 className="regular500">Play trailer {index + 1}</h2>
     </div>

@@ -14,33 +14,37 @@ export const MovieScreen = ({ movieDetails, posterPath, trailers }: Props) => (
     <Header title="Movie details" showBackButton />
     {movieDetails && (
       <>
-        <header className="movie-title">
+        <header data-testid={"movie-title"} className="movie-title">
           <h1>{movieDetails.title}</h1>
         </header>
         <div className="movie-details-container">
           <div className="movie-info-row">
-            <img src={posterPath} />
+            <img data-testid="movie-poster" src={posterPath} />
             <div className="movie-info">
               <div>
-                <h1>{getYearFromDate(movieDetails.release_date)}</h1>
-                <h2 className="italic regular">{movieDetails.runtime} mins</h2>
+                <h1 data-testid={"movie-title-published-year"}>
+                  {getYearFromDate(movieDetails.release_date)}
+                </h1>
+                <h2 data-testid={"movie-runtinme"} className="italic regular">
+                  {movieDetails.runtime} mins
+                </h2>
               </div>
               <div>
-                <h2 className="bold">
+                <h2 data-testid={"movie-score"} className="bold">
                   {movieDetails.vote_average.toFixed(1)}/10
                 </h2>
-                <button>Add to Favorite</button>
+                <button data-testid={"add-to-favorite"}>Add to Favorite</button>
               </div>
             </div>
           </div>
-          <div className="movie-overview">
+          <div data-testid={"movie-overview"} className="movie-overview">
             <p>{movieDetails.overview}</p>
           </div>
           <div className="movie-trailers">
             <header className="movie-trailers-header">
               <h2 className="regular">TRAILERS</h2>
             </header>
-            <div className="trailers-container">
+            <div data-testid={"movie-trailers"} className="trailers-container">
               {trailers.map((trailer, index) => (
                 <TrailerItem key={trailer.id} trailer={trailer} index={index} />
               ))}
