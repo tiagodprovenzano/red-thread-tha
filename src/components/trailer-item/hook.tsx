@@ -1,16 +1,11 @@
 import { MovieVideo } from "@/model";
+import { buildTrailerUrl } from "@/utils/build-trailer-url";
 import { useCallback } from "react";
 
 const useTrailerItem = (trailer: MovieVideo) => {
   const handleClickTrailer = useCallback(() => {
-    if (trailer.site === "YouTube") {
-      window.open(`https://www.youtube.com/watch?v=${trailer.key}`, "_blank");
-    } else {
-      window.open(
-        `https://www.google.com/search?q=${trailer.site}+${trailer.key}+trailer`,
-        "_blank"
-      );
-    }
+    const url = buildTrailerUrl(trailer.site, trailer.key);
+    window.open(url, "_blank");
   }, [trailer.site, trailer.key]);
 
   return {
