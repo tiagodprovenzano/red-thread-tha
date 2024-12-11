@@ -15,8 +15,8 @@ test("To have movies diplayed", async ({ page }) => {
   await page.goto("http://localhost:5173/");
 
   // select all movies
-
-  const movie = await page.getByTestId("movie");
+  await page.waitForSelector(".movie-item-container", { state: "visible" });
+  const moviesTestIds = await page.getByTestId("movie").all();
   // check if there are movies
-  await expect(movie).not.toBeNull();
+  await expect(moviesTestIds.length).not.toBe(0);
 });
