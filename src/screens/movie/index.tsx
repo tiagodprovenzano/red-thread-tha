@@ -2,7 +2,7 @@ import { Header } from "@/components/header";
 import { MovieDetails, MovieVideo } from "@/model";
 import "./style.css";
 import { getYearFromDate } from "@/utils";
-import PlayCircle from "@/assets/icons/play-circle.svg?react";
+import { TrailerItem } from "@/components/trailer-item/component";
 
 interface Props {
   movieDetails?: MovieDetails;
@@ -43,10 +43,7 @@ export const MovieScreen = ({ movieDetails, posterPath, trailers }: Props) => (
             </header>
             <div className="trailers-container">
               {trailers.map((trailer, index) => (
-                <div key={trailer.id} className="trailer">
-                  <PlayCircle />
-                  <h2 className="regular500">Play trailer {index + 1}</h2>
-                </div>
+                <TrailerItem key={trailer.id} trailer={trailer} index={index} />
               ))}
             </div>
           </div>

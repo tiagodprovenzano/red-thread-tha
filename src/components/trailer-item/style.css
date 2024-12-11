@@ -1,0 +1,17 @@
+.trailer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px;
+    gap: 16px;
+    background-color: #FAFAFA;
+    max-height: 60px;
+}
+
+.trailer:active {
+    background-color: #E0E0E0;
+}
+
+.trailer h2{
+    color: #757575;
+}
