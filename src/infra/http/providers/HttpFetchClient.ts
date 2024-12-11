@@ -8,9 +8,9 @@ import {
 export class HttpFetchClient implements HttpClient {
   private baseUrl: string;
   private token?: string;
-  constructor(baseUrl: string, token?: string) {
+  constructor(baseUrl: string) {
     this.baseUrl = baseUrl;
-    this.token = token;
+    this.token = import.meta.env.VITE_API_KEY;
   }
 
   async request(data: HttpRequest): Promise<HttpResponse<any>> {

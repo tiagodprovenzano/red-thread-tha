@@ -11,7 +11,7 @@ export type HttpRequest = {
   filters?: HttpRequestFilter[];
 };
 
-export interface HttpClient<R> {
+export interface HttpClient<R = any> {
   request: (data: HttpRequest) => Promise<HttpResponse<R>>;
 }
 
