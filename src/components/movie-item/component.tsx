@@ -9,7 +9,7 @@ interface Props {
 export const MovieComponent = ({ movie }: Props) => {
   const posterPath = usePosterPath(movie.poster_path);
   return (
-    <div className="movie-item-container">
+    <div data-testid={"movie"} className="movie-item-container">
       <img src={posterPath} alt={movie.title} />
     </div>
   );

@@ -9,7 +9,7 @@ interface HeaderProps {
 
 export const Header = ({ title, showBackButton = false }: HeaderProps) => {
   return (
-    <header className="page-header">
+    <header data-testid={"header"} className="page-header">
       <div className="page-header-title-wrapper">
         {showBackButton && <ArrowLeftIcon />}
         <h1>{title}</h1>
