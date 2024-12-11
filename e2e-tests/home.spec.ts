@@ -20,3 +20,11 @@ test("To have movies diplayed", async ({ page }) => {
   // check if there are movies
   await expect(moviesTestIds.length).not.toBe(0);
 });
+test("when scrolling on screen, header is still visible", async ({ page }) => {
+  await page.goto("http://localhost:5173/");
+  const header = await page.getByTestId("header");
+  const container = page.locator(".content-wrapper");
+  await expect(header).toBeVisible();
+  await container.evaluate((e) => e.scrollBy(0, 100));
+  await expect(header).toBeVisible();
+});
