@@ -1,8 +1,10 @@
 import {
-  DiscoverMoviesUsecase,
   DiscoverMoviesUsecaseParams,
+  DiscoverMoviesUsecaseResult,
 } from "../usecases";
 
 export interface IMoviesRepository {
-  discover(params: DiscoverMoviesUsecaseParams): DiscoverMoviesUsecase;
+  discover(
+    params: DiscoverMoviesUsecaseParams
+  ): Promise<DiscoverMoviesUsecaseResult>;
 }
