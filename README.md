@@ -52,7 +52,7 @@ This will execute the tests using vitest.
 
 ## Run End-to-End Tests
 
-To run the end-to-end tests, use the following command:
+To run the end-to-end tests, start the server and than run the e2e tests with the command:
 
 ```bash
 yarn e2e
