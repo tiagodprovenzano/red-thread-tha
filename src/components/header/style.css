@@ -1,0 +1,29 @@
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px;
+    background-color: #333;
+    color: white;
+    max-height: 64px;
+    /* we are only focusing on the design for phones and tablets */
+    max-width: 768px;
+}
+
+.page-header-title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.page-header h1 {
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: white;    
+    margin: 0;
+}
