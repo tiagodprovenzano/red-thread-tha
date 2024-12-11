@@ -8,6 +8,11 @@
     max-height: 64px;
     /* we are only focusing on the design for phones and tablets */
     max-width: 768px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 .page-header-title-wrapper {
@@ -20,7 +25,6 @@
     font-family: Roboto;
     font-size: 20px;
     font-weight: 700;
-    line-height: 24px;
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;

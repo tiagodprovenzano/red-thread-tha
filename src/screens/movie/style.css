@@ -3,6 +3,10 @@
     max-height: 56px;
     padding: 16px;
     background-color: #746A64;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
 }
 
 .movie-title h1 {
@@ -14,20 +18,86 @@
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
     margin: 0;
+    color: white
 }
 
 .movie-details-container {
     background-color: white;
-    height: 100%;
+    height: max-content;
     padding: 24px;
     display: flex;
     flex-direction: column;
+    margin-top: 58px;
+    overflow-y: scroll;
 }
 
 .movie-info-row {
     display: flex;
+    gap: 16px;
+
+    .movie-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0;
+        width: 100%;
+    }
+
+    .movie-info h1 {
+        font-family: Roboto;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        color: #212121;
+        margin: 0;
+    }
+
+    .movie-info h2 {
+        font-family: Roboto;
+        font-size: 14px;
+        font-style: italic;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        color: #212121;
+        margin: 0;
+    }
+
+    .movie-info h3 {
+        font-family: Roboto;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 24px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        color: #212121;
+        margin: 0;
+    }
+
+    .movie-info button {
+        margin-top: 16px;
+        height: 56px;
+        background-color: #746A64;
+        width: 100%;
+        border-radius: 2px;
+        color: white;
+        font-family: Roboto;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        text-align: center;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+    }
 }
-.movie-details-container img {
-    width: 115px;
+
+.movie-info-row img {
+    width: 30.6vw;
     height: auto;
 }
