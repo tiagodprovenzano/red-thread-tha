@@ -1,4 +1,4 @@
-import { DiscoverMoviesUsecaseParams, Movie } from "@/model";
+import { DiscoverMoviesUsecaseParams, ListMovie } from "@/model";
 import { PropsWithChildren, useCallback, useRef, useState } from "react";
 import { MoviesContext } from "./context";
 import { MoviesRepository } from "@/domain/repositories/movies-repository";
@@ -6,7 +6,7 @@ import { MoviesRepository } from "@/domain/repositories/movies-repository";
 export const MoviesContextProvider: React.FC<PropsWithChildren> = ({
   children,
 }) => {
-  const [movies, setMovies] = useState<Movie[]>([]);
+  const [movies, setMovies] = useState<ListMovie[]>([]);
   const [loading, setLoading] = useState(false);
 
   const [discoverMoviesOptions, setDiscoverMoviesOptions] =

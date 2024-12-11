@@ -1,17 +1,29 @@
-import { makeDiscoverMoviesUsecase } from "@/factories/usecases/movies/make-discover-movies-usecase";
+import {
+  makeDiscoverMoviesUsecase,
+  makeGetSingleMovieUsecase,
+} from "@/factories/usecases";
 import {
   DiscoverMoviesUsecase,
   DiscoverMoviesUsecaseParams,
   DiscoverMoviesUsecaseResult,
+  GetSingleMovieUsecase,
+  GetSingleMovieUsecaseParams,
+  GetSingleMovieUsecaseResult,
 } from "@/model";
 import { IMoviesRepository } from "@/model/repositories/movies-repository";
 import invariant from "tiny-invariant";
 
 export class MoviesRepository implements IMoviesRepository {
   private discoverFactory: () => DiscoverMoviesUsecase;
-  constructor(factories?: { discoverFactory: () => DiscoverMoviesUsecase }) {
+  private getSingleFactory: () => GetSingleMovieUsecase;
+  constructor(factories?: {
+    discoverFactory?: () => DiscoverMoviesUsecase;
+    getSingleFactory?: () => GetSingleMovieUsecase;
+  }) {
     this.discoverFactory =
       factories?.discoverFactory ?? makeDiscoverMoviesUsecase;
+    this.getSingleFactory =
+      factories?.getSingleFactory ?? makeGetSingleMovieUsecase;
   }
 
   discover(
@@ -36,5 +48,11 @@ export class MoviesRepository implements IMoviesRepository {
     );
 
     return this.discoverFactory().execute(params);
+  }
+
+  getSingle(
+    params: GetSingleMovieUsecaseParams
+  ): Promise<GetSingleMovieUsecaseResult> {
+    return this.getSingleFactory().execute(params);
   }
 }
