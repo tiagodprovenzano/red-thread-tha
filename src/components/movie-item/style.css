@@ -1,0 +1,9 @@
+.movie-item-container {
+    width: 100%;
+    display: flex;
+}
+
+.movie-item-container img {
+    width: 100%;
+    height: auto;
+}
