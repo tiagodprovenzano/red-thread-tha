@@ -17,13 +17,12 @@ export enum DiscoverMoviesUsecaseParamsSortBy {
 
 /**
  * @typedef DiscoverMoviesUsecaseParams
- * @property {DiscoverMoviesUsecaseParamsSortBy} sort_by defaults to DiscoverMoviesParamsSortBy.popularity_desc
- * @property {boolean} include_adult defaults to false
- * @property {boolean} include_video defaults to false
+ * @property {number} page defaults to 1
+ * @property {string} language defaults to 'en-US'
+ * @property {string} region iso-3166-1 code defaults to 'US'
  */
 export type DiscoverMoviesUsecaseParams = {
-  sort_by: DiscoverMoviesUsecaseParamsSortBy;
-  include_adult: boolean;
-  include_video: boolean;
   language: string;
+  page: number;
+  region: string;
 };

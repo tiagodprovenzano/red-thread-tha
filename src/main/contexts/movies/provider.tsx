@@ -1,8 +1,4 @@
-import {
-  DiscoverMoviesUsecaseParams,
-  DiscoverMoviesUsecaseParamsSortBy,
-  Movie,
-} from "@/model";
+import { DiscoverMoviesUsecaseParams, Movie } from "@/model";
 import { PropsWithChildren, useCallback, useRef, useState } from "react";
 import { MoviesContext } from "./context";
 import { MoviesRepository } from "@/domain/repositories/movies-repository";
@@ -15,10 +11,9 @@ export const MoviesContextProvider: React.FC<PropsWithChildren> = ({
 
   const [discoverMoviesOptions, setDiscoverMoviesOptions] =
     useState<DiscoverMoviesUsecaseParams>({
-      sort_by: DiscoverMoviesUsecaseParamsSortBy.popularity_desc,
-      include_adult: false,
-      include_video: false,
       language: "en-US",
+      region: "US",
+      page: 1,
     });
   const isLoading = useRef(false);
 
