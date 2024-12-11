@@ -1,50 +1,74 @@
-# React + TypeScript + Vite
+# Installation Instructions
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Follow these steps to set up the project and add your API key.
 
-Currently, two official plugins are available:
+## Install Dependencies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+First, ensure you have [Yarn](https://yarnpkg.com/) installed. Then, run the following command to install the project dependencies:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+yarn install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Add API Key
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+1. Create a new `.env` file in the root directory of the project by copying the provided `.env.example` file:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+  ```bash
+  cp .env.example .env
+  ```
+
+2. Open the newly created `.env` file and add your API key to the `VITE_API_KEY` variable:
+
+  ```env
+  VITE_API_KEY=your_api_key_here
+  ```
+
+Replace `your_api_key_here` with your actual API key.
+
+That's it! You have successfully installed the dependencies and added your API key.
+
+## Run the Project
+
+To start the development server, run the following command:
+
+```bash
+yarn dev
 ```
+
+This will start the project and you can view it in your browser at `http://localhost:5173`.
+
+
+
+## Run End-to-End Tests
+
+To run the unit tests, use the following command:
+
+```bash
+yarn test
+```
+
+This will execute the tests using vitest.
+
+## Run End-to-End Tests
+
+To run the end-to-end tests, use the following command:
+
+```bash
+yarn e2e
+```
+
+This will execute the e2e tests using playwright.
+
+
+## TODOS
+
+### Integrate with Sessions API
+
+- Fetch previously favorited movies for the current session.
+- Allow users to mark a movie as a favorite for the current session.
+
+### Sorting and Filtering
+
+- Add sorting options on the main list screen.
+- Implement filters to refine the movie list based on user preferences.
