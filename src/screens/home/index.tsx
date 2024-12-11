@@ -13,7 +13,7 @@ export const HomeScreen = ({ movies }: HomeScreenProps) => {
       <Header title="Pop Movies" />
       <div className="movies-grid">
         {movies.map((movie) => (
-          <MovieItem movie={movie} />
+          <MovieItem key={movie.id} movie={movie} />
         ))}
       </div>
     </div>
