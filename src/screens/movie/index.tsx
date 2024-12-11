@@ -1,8 +1,7 @@
-import { Header } from "@/components/header";
-import { MovieDetails, MovieVideo } from "@/model";
 import "./style.css";
+import { MovieDetails, MovieVideo } from "@/model";
 import { getYearFromDate } from "@/utils";
-import { TrailerItem } from "@/components/trailer-item/component";
+import { TrailerItem, Header } from "@/components";
 
 interface Props {
   movieDetails?: MovieDetails;
