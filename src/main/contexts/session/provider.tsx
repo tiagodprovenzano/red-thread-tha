@@ -9,7 +9,8 @@ export const SessionContextProvider: React.FC<PropsWithChildren> = ({
   const [session, setSession] = useState<Session>();
 
   const createSession = useCallback(async () => {
-    new SessionRepository().createGuestSession().then((result) => {
+    try {
+      const result = await new SessionRepository().createGuestSession();
       if (result.success) {
         setSession({
           session_id: result.guest_session_id,
@@ -17,10 +18,12 @@ export const SessionContextProvider: React.FC<PropsWithChildren> = ({
         });
       }
       localStorage.setItem("session", JSON.stringify(result));
-    });
+    } catch (error) {
+      console.error(error);
+    }
   }, []);
 
-  const getSession = useCallback(async () => {
+  const getSession = useCallback(() => {
     const sessionStr = localStorage.getItem("session");
     if (sessionStr) {
       const currentSession = JSON.parse(sessionStr);

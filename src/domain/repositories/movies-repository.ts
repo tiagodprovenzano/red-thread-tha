@@ -21,6 +21,7 @@ export class MoviesRepository implements IMoviesRepository {
   private discoverFactory: () => DiscoverMoviesUsecase;
   private getSingleFactory: () => GetSingleMovieUsecase;
   private getMovieVideosFactory: () => GetMovieVideosUsecase;
+
   constructor(factories?: {
     discoverFactory?: () => DiscoverMoviesUsecase;
     getSingleFactory?: () => GetSingleMovieUsecase;

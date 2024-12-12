@@ -14,5 +14,6 @@ export interface MoviesContextType {
   fetchMovies: () => void;
   fetchSingleMovie: () => void;
   fetchMovieVideos: () => void;
+  fetchMoreMovies: () => Promise<void>;
   trailers: MovieVideo[];
 }

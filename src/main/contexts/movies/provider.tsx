@@ -28,8 +28,9 @@ export const MoviesContextProvider: React.FC<PropsWithChildren> = ({
 
   const fetchMovies = useCallback(async () => {
     if (isLoading.current) return;
+    isLoading.current = true;
     new MoviesRepository()
-      .discover(discoverMoviesOptions)
+      .discover({ ...discoverMoviesOptions, page: 1 })
       .then((data) => {
         setMovies(data.results);
       })
@@ -38,6 +39,26 @@ export const MoviesContextProvider: React.FC<PropsWithChildren> = ({
       })
       .finally(() => {
         isLoading.current = false;
+        setLoading(false);
+      });
+  }, [discoverMoviesOptions]);
+
+  const isFetchingMoreMovies = useRef(false);
+  const fetchMoreMovies = useCallback(async () => {
+    if (isFetchingMoreMovies.current) return;
+    isFetchingMoreMovies.current = true;
+    const page = discoverMoviesOptions.page + 1;
+    new MoviesRepository()
+      .discover({ ...discoverMoviesOptions, page })
+      .then((data) => {
+        setMovies((prev) => [...prev, ...data.results]);
+        setDiscoverMoviesOptions((prev) => ({ ...prev, page }));
+      })
+      .catch((error) => {
+        console.error(error);
+      })
+      .finally(() => {
+        isFetchingMoreMovies.current = false;
         setLoading(false);
       });
   }, [discoverMoviesOptions]);
@@ -99,6 +120,7 @@ export const MoviesContextProvider: React.FC<PropsWithChildren> = ({
         fetchSingleMovie,
         singleMovieDetails: singleMovie,
         fetchMovieVideos,
+        fetchMoreMovies,
         trailers,
       }}
     >

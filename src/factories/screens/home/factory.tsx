@@ -3,11 +3,11 @@ import { HomeScreen } from "@/screens/home";
 import { useContext, useEffect } from "react";
 
 export const HomeScreenFactory = () => {
-  const { movies, fetchMovies } = useContext(MoviesContext);
+  const { movies, fetchMovies, fetchMoreMovies } = useContext(MoviesContext);
 
   useEffect(() => {
     fetchMovies();
-  }, [fetchMovies]);
+  }, []);
 
-  return <HomeScreen movies={movies} />;
+  return <HomeScreen movies={movies} handleFetchMoreMovies={fetchMoreMovies} />;
 };
